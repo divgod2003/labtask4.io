@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My webpage</title>
+</head>
+<body>
+  <h1 id="heading">Hello World</h1>
+  <button id="my-button">Click Me</button>
+  <script>
+    var button = document.getElementById("my-button");
+    var heading = document.getElementById("heading");
+    var colors = ["red", "green", "blue"];
+    var text = ["Hello", "Welcome", "World"];
+    var colorIndex = 0;
+    var textIndex = 0;
+
+    button.addEventListener("click", function(){
+      document.body.style.backgroundColor = colors[colorIndex];
+      heading.innerHTML = text[textIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+      textIndex = (textIndex + 1) % text.length;
+    });
+  </script>
+</body>
+</html>
